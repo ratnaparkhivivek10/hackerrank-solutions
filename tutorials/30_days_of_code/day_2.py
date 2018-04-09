@@ -1,18 +1,15 @@
+#!/bin/python3
 
-# Declare second integer, double, and String variables.
+import sys
 
-# Read and save an integer, double, and String to your variables.
-
-# Print the sum of both integer variables on a new line.
-
-# Print the sum of the double variables on a new line.
-
-# Concatenate and print the String variables on a new line
-# The 's' variable above should be printed first.
-I = int(input())
-D = float(input())
-S = input()
-
-print(i+I)
-print(d+D)
-print(s+S)
+if __name__ == "__main__":
+    meal_cost = float(input().strip())
+    tip_percent = int(input().strip())
+    tax_percent = int(input().strip())
+    
+    tip = meal_cost*(tip_percent/100)
+    tax = meal_cost*(tax_percent/100)
+    
+    total = meal_cost + tip + tax
+    
+    print('The total meal cost is {0} dollars.'.format(round(total)))
