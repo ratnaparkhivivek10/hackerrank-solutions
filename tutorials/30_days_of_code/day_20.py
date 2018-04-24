@@ -6,10 +6,10 @@ n = int(input().strip())
 data = list(map(int, input().strip().split(' ')))
 
 swap = 0
-for _ in range(len(data) - 1):
-	for i in range(len(data) - 1):
-		if data[i] > data[i+1]:
-			data[i+1], data[i] = data[i], data[i+1]
+for i in range(1, len(data)):
+	for j in range(len(data) - i):
+		if data[j] > data[j+1]:
+			data[j+1], data[j] = data[j], data[j+1]
 			swap += 1
 	if swap == 0:
 		break
