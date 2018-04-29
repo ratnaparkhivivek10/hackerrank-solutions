@@ -23,16 +23,20 @@ class Solution:
             current = current.next
     
 	# Below is completed method.
-	def removeDuplicates(self,head):
-        current = head
+    def removeDuplicates(self,head):
+        previous = head
+        current = head.next
         dups = []
-        while current.next is not None:
+        dups.append(previous.data)
+        
+        while current:
             if current.data in dups:
-                current.data = current.next.data
-                current.next = current.next.next
+                previous.next = current.next
             else:
                 dups.append(current.data)
-                current = current.next
+                previous = current
+                
+            current = current.next     
         
         return head
 		
