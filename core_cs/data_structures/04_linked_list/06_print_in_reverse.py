@@ -22,3 +22,10 @@ def ReversePrint(head):
             head = head.next
         for item in reversed(data):
             print(item)
+			
+def ReversePrint(head):
+    current = head
+    if current:
+        ReversePrint(current.next)
+        print(current.data)
+	
