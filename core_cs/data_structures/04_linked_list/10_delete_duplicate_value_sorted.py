@@ -13,3 +13,14 @@
 """
 
 def RemoveDuplicates(head):
+    previous = head
+    current = head.next
+    
+    while current.next:
+        if previous.data == current.data:
+            previous.next = current.next
+            
+        previous = current.next    
+        current = current.next.next
+        
+    return head
