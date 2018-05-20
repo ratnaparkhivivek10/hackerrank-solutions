@@ -16,11 +16,12 @@ def RemoveDuplicates(head):
     previous = head
     current = head.next
     
-    while current.next:
+    while current:
         if previous.data == current.data:
             previous.next = current.next
-            
-        previous = current.next    
-        current = current.next.next
+            current = current.next
+        else:
+            previous = current
+            current = current.next
         
     return head
